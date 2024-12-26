@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:21:07 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:21:35 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:21:56 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_iscntrl(int c)
+int	ft_iscntrl(int c)
 {
-	return ((c < 'SPACE') || (c == 'DEL'));
+	return ((c < SPACE) || (c == DELCHAR));
 }

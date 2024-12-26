@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 17:24:46 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:22:11 by cglavieu         ###   ########.fr       */
+/*   Created: 2024/12/26 08:09:05 by cglavieu          #+#    #+#             */
+/*   Updated: 2024/12/26 10:16:16 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_is.h>
+#include <ft_print.h>
 
-int	ft_isprint(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	return ((c >= SPACE) && (c < DELCHAR));
+	write(fd, &c, 1);
 }

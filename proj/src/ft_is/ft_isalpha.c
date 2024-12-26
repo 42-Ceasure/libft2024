@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:20:14 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:20:39 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:21:44 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return (ft_isupper(c) || islower(c));
 }

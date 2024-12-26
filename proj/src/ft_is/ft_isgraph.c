@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:23:18 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:23:33 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:22:03 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isgraph(int c)
+int	ft_isgraph(int c)
 {
-	return ((c > 'SPACE') && (c < 'DEL'));
+	return ((c > SPACE) && (c < DELCHAR));
 }

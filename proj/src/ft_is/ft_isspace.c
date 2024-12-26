@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:26:03 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:26:24 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:22:20 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	return (((c >= 'HT') && (c <= 'CR')) || c == 'SPACE');
+	return (((c >= HTAB) && (c <= CRET)) || c == SPACE);
 }

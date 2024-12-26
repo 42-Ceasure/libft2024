@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:07:40 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:31:50 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:21:51 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isblank(int c)
+int	ft_isblank(int c)
 {
-	return ((c == 'SPACE') || (c == 'HT'));
+	return ((c == SPACE) || (c == HTAB));
 }

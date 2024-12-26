@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 17:24:46 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:22:11 by cglavieu         ###   ########.fr       */
+/*   Created: 2024/12/26 08:19:11 by cglavieu          #+#    #+#             */
+/*   Updated: 2024/12/26 10:14:10 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_is.h>
+#include <ft_print.h>
 
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	return ((c >= SPACE) && (c < DELCHAR));
+	ft_putstr_fd(ft_itoa(nb), fd);
 }

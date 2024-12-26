@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:29:35 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:29:36 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:22:27 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isxdigit(int c)
+int	ft_isxdigit(int c)
 {
 	if (ft_isdigit(c))
 		return ((ft_islower(c) && (c < 'f')) || (ft_isupper(c) && (c < 'F')));

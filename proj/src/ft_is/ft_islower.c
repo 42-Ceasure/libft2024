@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:23:57 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:24:17 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:22:06 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_islower(int c)
+int	ft_islower(int c)
 {
 	return ((c >= 'a') && (c <= 'z'));
 }

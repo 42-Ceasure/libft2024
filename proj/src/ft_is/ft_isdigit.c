@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:22:31 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/23 17:22:54 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 10:21:59 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return ((c >= '0') && (c <= '9'));
 }
