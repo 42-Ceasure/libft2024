@@ -6,11 +6,29 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 11:03:19 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/08 11:27:18 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *nptr)
+int		ft_atoi(const char *nptr)
 {
-	
+	int	number = 0;
+	int	neg = 1;
+
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (!ft_isdigit(*nptr))
+	{
+		if (*nptr == '-')
+			neg = -1;
+		else if (*nptr != '+')
+			return (0);
+		nptr++;
+	}
+	while (ft_isdigit(*nptr))
+	{
+		number = (number * 10) + (*nptr - '0');
+		nptr++;
+	}
+	return (neg < 0 ? -number : number);
 }
