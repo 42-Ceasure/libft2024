@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:07:40 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:21:51 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:22:59 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isblank(int c)
 {
-	return ((c == SPACE) || (c == HTAB));
+	return ((c == ' ') || (c == '\t'));
 }

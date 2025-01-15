@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:25:26 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:22:17 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:23:45 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_ispunct(int c)
 {
-	return (!ft_isalnum(c) && c > SPACE && c < DELCHAR);
+	return (!ft_isalnum(c) && c > ' ' && c < DEL);
 }

@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:21:07 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:21:56 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:23:45 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_iscntrl(int c)
 {
-	return ((c < SPACE) || (c == DELCHAR));
+	return ((c < ' ') || (c == DEL));
 }

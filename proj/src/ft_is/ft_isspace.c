@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:26:03 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:22:20 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:22:59 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isspace(int c)
 {
-	return (((c >= HTAB) && (c <= CRET)) || c == SPACE);
+	return (((c >= '\t') && (c <= '\r')) || c == ' ');
 }

@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:31:02 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:21:47 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:23:45 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isascii(int c)
 {
-	return ((c >= NULCHAR) && (c <= DELCHAR));
+	return ((c >= '\0') && (c <= DEL));
 }

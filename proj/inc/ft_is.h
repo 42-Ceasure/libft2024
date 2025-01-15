@@ -6,18 +6,14 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:15:25 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:08:57 by cglavieu         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:23:51 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_IS_H
 # define FT_IS_H
 
-# define NULCHAR	(0)
-# define DELCHAR	(127)
-# define SPACE		(32)
-# define HTAB		(9)
-# define CRET		(13)
+# define DEL	(127)
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
