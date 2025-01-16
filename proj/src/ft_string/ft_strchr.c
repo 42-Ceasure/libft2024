@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 06:31:29 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:25:01 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/16 06:53:22 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ char	*strchr(const char *s, int c)
 	while (*s != '\0' && *s != c)
 		s++;
 	if (*s == c)
-		return (s);
+		return ((char *)s);
 	return (NULL);
 }
