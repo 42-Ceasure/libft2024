@@ -6,11 +6,11 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:39:38 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/09 12:43:22 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:39:46 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <ft_mem.h>
 
 void	ft_bzero(void *s, size_t n)
 {

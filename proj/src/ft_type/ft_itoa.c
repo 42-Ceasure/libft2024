@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 12:47:54 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/09 13:02:31 by cglavieu         ###   ########.fr       */
+/*   Created: 2024/12/26 08:28:53 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/16 08:49:08 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset(void *s, int c, size_t n)
+char	*ft_itoa(int nb)
 {
-	char	*str = (char *)s;
+	int			i = 11;
+	long		mem;
+	static char	number[12];
 
-	while (n--)
+	mem = (long)nb;
+	if (nb < 0)
+		mem = -mem;
+	number[i] = '\0';
+	while (mem > 0 && i--)
 	{
-		*str = 0;
-		str++;
-		// n--;
+		number[i] = ((int)(mem % 10) + '0');
+		mem = mem / 10;
 	}
-	return (s);
+	if (nb < 0)
+		number[--i] = '-';
+	return (number + i);
 }

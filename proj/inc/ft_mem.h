@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_mem.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/08 11:27:18 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 08:40:26 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/16 08:42:51 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *nptr)
-{
-	int	number = 0;
-	int	neg = 1;
+#ifndef FT_MEM_H
+# define FT_MEM_H
 
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (!ft_isdigit(*nptr))
-	{
-		if (*nptr == '-')
-			neg = -1;
-		else if (*nptr != '+')
-			return (0);
-		nptr++;
-	}
-	while (ft_isdigit(*nptr))
-	{
-		number = (number * 10) + (*nptr - '0');
-		nptr++;
-	}
-	return (neg < 0 ? -number : number);
-}
+# include <sys/types.h>
+
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+
+#endif

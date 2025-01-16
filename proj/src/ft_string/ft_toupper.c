@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 06:31:29 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 08:08:58 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 08:11:01 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/16 08:34:10 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-char	*ft_strchr(const char *s, int c)
+int		ft_toupper(int c)
 {
-	while (*s != '\0' && *s != c)
-		s++;
-	if (*s == c)
-		return ((char *)s);
-	return (NULL);
+	if (ft_islower(c))
+		return (c + 'A' - 'a');
+	return (c);
 }

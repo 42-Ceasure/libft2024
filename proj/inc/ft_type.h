@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 06:31:29 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 08:08:58 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 08:46:54 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/16 08:48:50 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#ifndef FT_TYPE_H
+# define FT_TYPE_H
 
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s != '\0' && *s != c)
-		s++;
-	if (*s == c)
-		return ((char *)s);
-	return (NULL);
-}
+# include <ft_is.h>
+
+int		ft_atoi(const char *nptr);
+char	*ft_itoa(int nb);
+
+#endif

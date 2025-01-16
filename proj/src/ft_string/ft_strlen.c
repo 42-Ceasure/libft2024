@@ -6,17 +6,17 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:38:47 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:27:23 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:29:41 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i = 0;
 
-	while (s != 'NUL')
+	while (*(s++) != '0')
 		i++;
 	return (i);
 }

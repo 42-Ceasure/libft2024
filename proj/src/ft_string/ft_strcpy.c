@@ -6,11 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 06:56:14 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:11:19 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:36:36 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strcpy(char *dest, const char *src)
+#include <ft_string.h>
+
+char	*ft_strcpy(char *dest, const char *src)
 {
 	char	*ret = dest;
 

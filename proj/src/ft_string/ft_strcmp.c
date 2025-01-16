@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 06:49:26 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 10:25:06 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:09:29 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-int		strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 != '\0' && s2 != '\0')
 	{
