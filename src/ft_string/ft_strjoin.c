@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 11:55:19 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 18:30:50 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/17 17:52:32 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/18 20:33:20 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <ft_string.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	bytes;
-	void	*ret;
+	size_t	len1;
+	size_t	len2;
+	char	*ret;
 
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (SIZE_MAX / nmemb < size)
+	if (!s1 || !s2)
 		return (NULL);
-	bytes = nmemb * size;
-	ret = malloc(bytes);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (len1 == 0)
+		return (ft_strdup(s2));
+	if (len2 == 0)
+		return (ft_strdup(s1));
+	ret = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!ret)
 		return (NULL);
-	ft_memset(ret, 0, bytes);
+	ft_memcpy(ret, s1, len1);
+	ft_memcpy(ret + len1, s2, len2 + 1);
 	return (ret);
 }

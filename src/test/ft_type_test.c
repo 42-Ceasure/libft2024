@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_type_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 12:29:45 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 18:16:35 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 18:11:51 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/16 18:19:49 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <tester.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	test_ft_type(int ac, char **av)
 {
-	unsigned char	*ptr;
-	unsigned char	value;
 
-	ptr = (unsigned char *)s;
-	value = (unsigned char)c;
-	while (n)
-	{
-		if (*ptr == value)
-			return (void *)ptr;
-		ptr++;
-		n--;
-	}
-	return (NULL);
 }

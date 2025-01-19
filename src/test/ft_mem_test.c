@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_mem_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 12:29:45 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 18:16:35 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 18:09:51 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/17 16:41:24 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <tester.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	testft_bzero(void)
 {
-	unsigned char	*ptr;
-	unsigned char	value;
 
-	ptr = (unsigned char *)s;
-	value = (unsigned char)c;
-	while (n)
-	{
-		if (*ptr == value)
-			return (void *)ptr;
-		ptr++;
-		n--;
-	}
-	return (NULL);
+}
+
+void	testft_calloc(void)
+{
+
+}
+
+void	testft_memccpy(void)
+{
+
+}
+
+void	testft_memchr(void)
+{
+
+}
+
+void	testft_memset(void)
+{
+
+}
+
+
+void	test_ft_mem(void)
+{
+	testft_bzero();
+	testft_calloc();
+	testft_memccpy();
+	testft_memchr();
+	testft_memset();
 }

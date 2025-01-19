@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 07:52:18 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 08:53:25 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/18 01:48:43 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <ft_print.h>
 # include <ft_string.h>
 # include <ft_type.h>
+# include <stdio.h>
 
 int		get_next_line(int const fd, char **line);
 

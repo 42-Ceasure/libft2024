@@ -6,19 +6,28 @@
 #    By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:24:45 by cglavieu          #+#    #+#              #
-#    Updated: 2025/01/16 15:50:40 by cglavieu         ###   ########.fr        #
+#    Updated: 2025/01/18 22:18:33 by cglavieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+DEBUG			=	true
 
 # *** LIBRARY **************************************************************** #
 NAME			=	libft.a
 
+# *** TESTER ***************************************************************** #
+TEST			=	lfttest
+
 # *** COMPILATION ************************************************************ #
 CC				=	gcc
+ifeq ($(DEBUG),true)
+CFLAG			=	-Wall -Wextra -Werror -g -O0 -fsanitize=address
+else
 CFLAG			=	-Wall -Wextra -Werror
-
+endif
 # *** HEADERS **************************************************************** #
 INCDIR			=	./inc/
+TESTINCDIR		=	./test/inc/
 
 # *** SOURCES **************************************************************** #
 SRCDIR			=	./src/
@@ -35,7 +44,8 @@ ISFILESPATH		=	$(addprefix $(ISDIRPATH),$(ISSOURCES))
 MEMDIRNAME		=	ft_mem/
 MEMDIRPATH		=	$(addprefix $(SRCDIR),$(MEMDIRNAME))
 MEMSOURCES		=	ft_bzero.c			ft_calloc.c			ft_memccpy.c 	\
-					ft_memchr.c			ft_memset.c
+					ft_memchr.c			ft_memcpy.c			ft_memmove.c	\
+					ft_memset.c
 MEMFILESPATH		=	$(addprefix $(MEMDIRPATH),$(MEMSOURCES))
 # *** FT_PRT	*** #
 PRTDIRNAME		=	ft_print/
@@ -48,7 +58,8 @@ PRTFILESPATH	=	$(addprefix $(PRTDIRPATH),$(PRTSOURCES))
 STRDIRNAME		=	ft_string/
 STRDIRPATH		=	$(addprefix $(SRCDIR),$(STRDIRNAME))
 STRSOURCES		=	ft_strcat.c			ft_strchr.c			ft_strcmp.c		\
-					ft_strcpy.c			ft_strdup.c			ft_strlen.c		\
+					ft_strcpy.c			ft_strdup.c			ft_strjoin.c	\
+					ft_strlen.c		\
 					ft_strncat.c		ft_strncmp.c		ft_strncpy.c	\
 					ft_strrchr.c		ft_toupper.c		ft_tolower.c
 STRFILESPATH	=	$(addprefix $(STRDIRPATH),$(STRSOURCES))
@@ -62,7 +73,16 @@ TYPFILESPATH	=	$(addprefix $(TYPDIRPATH),$(TYPSOURCES))
 GNLDIRNAME		=	get_next_line/
 GNLDIRPATH		=	$(addprefix $(SRCDIR),$(GNLDIRNAME))
 GNLSOURCES		=	get_next_line.c
-GNLFILESPATH	=	$(addprefix $(GNLDIRPATH),$(GNLSRC))
+GNLFILESPATH	=	$(addprefix $(GNLDIRPATH),$(GNLSOURCES))
+
+# *** TESTER	*** #
+TESTDIRNAME		=	test/
+TESTDIRPATH		=	$(addprefix $(SRCDIR),$(TESTDIRNAME))
+TESTSOURCES		=	main.c				powertest.c			ft_is_test.c	\
+					ft_mem_test.c							ft_string_test.c\
+					gnl_test.c
+TESTFILESPATH	=	$(addprefix $(TESTDIRPATH),$(TESTSOURCES))
+
 # *** BINARIES *************************************************************** #
 OBJDIR			=	./obj/
 # *** FT_IS		*** #
@@ -87,17 +107,27 @@ TYPOBJECTS		=	$(TYPSOURCES:.c=.o)
 TYPOBJFILES		=	$(addprefix $(TYPOBJDIR),$(TYPOBJECTS))
 # *** GNL		*** #
 GNLOBJDIR		=	$(addprefix $(OBJDIR),$(GNLDIRNAME))
-GNLOBJECTS		=	$(GNLSRC:.c=.o)
+GNLOBJECTS		=	$(GNLSOURCES:.c=.o)
 GNLOBJFILES		=	$(addprefix $(GNLOBJDIR),$(GNLOBJECTS))
+# *** TEST		*** #
+TESTOBJDIR		=	$(addprefix $(OBJDIR),$(TESTDIRNAME))
+TESTOBJECTS		=	$(TESTSOURCES:.c=.o)
+TESTOBJFILES	=	$(addprefix $(TESTOBJDIR),$(TESTOBJECTS))
 # *** ALL		*** #
 ALLOBJF			=	$(ISOBJFILES)	$(MEMOBJFILES)	$(PRTOBJFILES) \
 					$(STROBJFILES)	$(TYPOBJFILES)	$(GNLOBJFILES)
+TESTOBJF		=	$(TESTOBJFILES)
 
 # *** RULES ****************************************************************** #
 all				:	$(NAME)
 
+test			:	$(NAME) $(TEST)
+
 $(NAME)			:	$(ALLOBJF)
 					@ar rc $@ $^
+
+$(TEST)			:	$(TESTOBJF) $(NAME)
+					$(CC) $(CFLAG) -L . -lft $^ -o $@
 
 # *** FT_IS		*** #
 $(ISOBJDIR)%.o	:	$(ISDIRPATH)%.c
@@ -123,11 +153,16 @@ $(TYPOBJDIR)%.o	:	$(TYPDIRPATH)%.c
 $(GNLOBJDIR)%.o	:	$(GNLDIRPATH)%.c
 					@mkdir -p $(OBJDIR) $(GNLOBJDIR)
 					@$(CC) $(CFLAG) -I $(INCDIR) -c $< -o $@
+# *** GNL		*** #
+$(TESTOBJDIR)%.o	:	$(TESTDIRPATH)%.c
+					@mkdir -p $(OBJDIR) $(TESTOBJDIR)
+					@$(CC) $(CFLAG) -I $(INCDIR) -c $< -o $@
 
 clean			:
 					@rm -rf $(OBJDIR)
 
 fclean			:	clean
 					@rm -f $(NAME)
+					@rm -f $(TEST)
 
 re				:	fclean all

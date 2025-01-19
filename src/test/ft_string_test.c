@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_string_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 12:29:45 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 18:16:35 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/16 18:11:05 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/17 18:08:01 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <tester.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	testft_strjoin(void)
 {
-	unsigned char	*ptr;
-	unsigned char	value;
+	char *s1 = "bonjour";
+	char *s2 = " au revoir";
+	char *res = NULL;
 
-	ptr = (unsigned char *)s;
-	value = (unsigned char)c;
-	while (n)
-	{
-		if (*ptr == value)
-			return (void *)ptr;
-		ptr++;
-		n--;
-	}
-	return (NULL);
+	res = ft_strjoin(s1, s2);
+	ft_putendl(res);
+	free(res);
+}
+
+void	test_ft_string(void)
+{
+	testft_strjoin();
 }
