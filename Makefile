@@ -6,7 +6,7 @@
 #    By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:24:45 by cglavieu          #+#    #+#              #
-#    Updated: 2025/01/18 22:18:33 by cglavieu         ###   ########.fr        #
+#    Updated: 2025/01/20 11:54:09 by cglavieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,11 @@ TESTINCDIR		=	./test/inc/
 
 # *** SOURCES **************************************************************** #
 SRCDIR			=	./src/
+# *** FT_FILE		*** #
+FILEDIRNAME		=	ft_file/
+FILEDIRPATH		=	$(addprefix $(SRCDIR),$(FILEDIRNAME))
+FILESOURCES		=	ft_filelinecount.c	ft_fileopen.c
+FILEFILESPATH	=	$(addprefix $(FILEDIRPATH),$(FILESOURCES))
 # *** FT_IS		*** #
 ISDIRNAME		=	ft_is/
 ISDIRPATH		=	$(addprefix $(SRCDIR),$(ISDIRNAME))
@@ -57,9 +62,9 @@ PRTFILESPATH	=	$(addprefix $(PRTDIRPATH),$(PRTSOURCES))
 # *** FT_STR	*** #
 STRDIRNAME		=	ft_string/
 STRDIRPATH		=	$(addprefix $(SRCDIR),$(STRDIRNAME))
-STRSOURCES		=	ft_strcat.c			ft_strchr.c			ft_strcmp.c		\
-					ft_strcpy.c			ft_strdup.c			ft_strjoin.c	\
-					ft_strlen.c		\
+STRSOURCES		=	ft_strcat.c			ft_strccount.c		ft_strchr.c		\
+					ft_strcmp.c			ft_strcpy.c			ft_strdup.c		\
+					ft_strjoin.c		ft_strlen.c		\
 					ft_strncat.c		ft_strncmp.c		ft_strncpy.c	\
 					ft_strrchr.c		ft_toupper.c		ft_tolower.c
 STRFILESPATH	=	$(addprefix $(STRDIRPATH),$(STRSOURCES))
@@ -85,6 +90,10 @@ TESTFILESPATH	=	$(addprefix $(TESTDIRPATH),$(TESTSOURCES))
 
 # *** BINARIES *************************************************************** #
 OBJDIR			=	./obj/
+# *** FT_FILE		*** #
+FILOBJDIR		=	$(addprefix $(OBJDIR),$(FILEDIRNAME))
+FILEOBJECTS		=	$(FILESOURCES:.c=.o)
+FILEOBJFILES	=	$(addprefix $(FILOBJDIR),$(FILEOBJECTS))
 # *** FT_IS		*** #
 ISOBJDIR		=	$(addprefix $(OBJDIR),$(ISDIRNAME))
 ISOBJECTS		=	$(ISSOURCES:.c=.o)
@@ -115,7 +124,8 @@ TESTOBJECTS		=	$(TESTSOURCES:.c=.o)
 TESTOBJFILES	=	$(addprefix $(TESTOBJDIR),$(TESTOBJECTS))
 # *** ALL		*** #
 ALLOBJF			=	$(ISOBJFILES)	$(MEMOBJFILES)	$(PRTOBJFILES) \
-					$(STROBJFILES)	$(TYPOBJFILES)	$(GNLOBJFILES)
+					$(STROBJFILES)	$(TYPOBJFILES)	$(GNLOBJFILES) \
+					$(FILEOBJFILES)
 TESTOBJF		=	$(TESTOBJFILES)
 
 # *** RULES ****************************************************************** #
@@ -129,6 +139,10 @@ $(NAME)			:	$(ALLOBJF)
 $(TEST)			:	$(TESTOBJF) $(NAME)
 					$(CC) $(CFLAG) -L . -lft $^ -o $@
 
+# *** FT_FILE		*** #
+$(FILOBJDIR)%.o	:	$(FILEDIRPATH)%.c
+					@mkdir -p $(OBJDIR) $(FILOBJDIR)
+					@$(CC) $(CFLAG) -I $(INCDIR) -c $< -o $@
 # *** FT_IS		*** #
 $(ISOBJDIR)%.o	:	$(ISDIRPATH)%.c
 					@mkdir -p $(OBJDIR) $(ISOBJDIR)

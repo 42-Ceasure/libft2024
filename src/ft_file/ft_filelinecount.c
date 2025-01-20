@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_filelinecount.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 07:52:18 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/20 11:42:36 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/20 11:24:37 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/20 11:43:53 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <ft_file.h>
 
-# include <ft_file.h>
-# include <ft_is.h>
-# include <ft_mem.h>
-# include <ft_print.h>
-# include <ft_string.h>
-# include <ft_type.h>
-# include <stdio.h>
+int		ft_filelinecount(char *path)
+{
+	int		fd;
+	int		ret;
+	char	buffer[BUFFER_S + 1];
+	size_t	line_count;
 
-int		get_next_line(int const fd, char **line);
-
-#endif
+	fd = open(path, O_RDONLY);
+	line_count = 0;
+	if (fd == -1)
+		return (-1);
+	while ((ret = read(fd, buffer, BUFFER_S)))
+	{
+		if (ret == -1)
+			return (-1);
+		buffer[ret] = '\0';
+		line_count += ft_strccount(buffer, '\n');
+	}
+	close (fd);
+	return (line_count);
+}
