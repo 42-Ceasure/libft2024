@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:59 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/20 11:55:12 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:51:37 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <ft_string.h>
-
-# define BUFFER_S 255
+# include <libft.h>
 
 int		ft_filelinecount(char *path);
 int		ft_fileopenr(char *path);

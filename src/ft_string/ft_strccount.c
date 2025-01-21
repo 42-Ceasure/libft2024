@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:05:29 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/20 11:25:42 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:11:24 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 size_t	ft_strccount(const char *str, char c)
 {
 	size_t	count;
-	char	*ptr;
 
 	count = 0;
-	ptr = (char *)str;
-	while ((ptr = ft_strchr(ptr, c)) != NULL)
+	while (*str)
 	{
-		count++;
-		ptr++;
+		if (*str == c)
+			count++;
+		str++;
 	}
 	return (count);
 }

@@ -6,13 +6,11 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:41:18 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/19 21:42:47 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:58:42 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-
-#define BUFF_SIZE 255
 
 int check_params(int const fd, char **line)
 {
