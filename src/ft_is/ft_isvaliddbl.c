@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_file.h                                          :+:      :+:    :+:   */
+/*   ft_isvaliddbl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:24:59 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/22 19:57:53 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/23 15:11:14 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/23 15:11:55 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FILE_H
-# define FT_FILE_H
+#include <ft_is.h>
 
-# include <fcntl.h>
-# include <stddef.h>
-# include <unistd.h>
-# include <ft_string.h>
-# include <libft.h>
+int		ft_isvaliddbl(const char *str)
+{
+	int	point_seen;
 
-int		ft_filelinecount(char *path);
-int		ft_fileopenr(char *path);
-int		ft_fileopenw(char *path);
-int		ft_fileopenrwc(char *path);
-int		ft_fileopen(char *path, char *mode);
-
-#endif
+	point_seen = 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (0);
+	while (*str)
+	{
+		if (*str == '.')
+		{
+			if (point_seen)
+				return (0);
+			point_seen = 1;
+		}
+		else if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
+}

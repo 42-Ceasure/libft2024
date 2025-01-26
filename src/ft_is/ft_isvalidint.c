@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_file.h                                          :+:      :+:    :+:   */
+/*   ft_isvalidint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:24:59 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/22 19:57:53 by cglavieu         ###   ########.fr       */
+/*   Created: 2025/01/23 14:59:21 by cglavieu          #+#    #+#             */
+/*   Updated: 2025/01/23 15:11:44 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FILE_H
-# define FT_FILE_H
+#include <ft_is.h>
 
-# include <fcntl.h>
-# include <stddef.h>
-# include <unistd.h>
-# include <ft_string.h>
-# include <libft.h>
-
-int		ft_filelinecount(char *path);
-int		ft_fileopenr(char *path);
-int		ft_fileopenw(char *path);
-int		ft_fileopenrwc(char *path);
-int		ft_fileopen(char *path, char *mode);
-
-#endif
+int		ft_isvalidint(const char *str)
+{
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}

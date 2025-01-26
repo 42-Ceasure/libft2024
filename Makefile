@@ -6,7 +6,7 @@
 #    By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:24:45 by cglavieu          #+#    #+#              #
-#    Updated: 2025/01/20 11:54:09 by cglavieu         ###   ########.fr        #
+#    Updated: 2025/01/23 15:13:05 by cglavieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ ISSOURCES		=	ft_isalnum.c		ft_isblank.c		ft_isgraph.c 	\
 					ft_ispunct.c		ft_isxdigit.c		ft_isalpha.c 	\
 					ft_iscntrl.c		ft_islower.c		ft_isspace.c 	\
 					ft_isascii.c		ft_isdigit.c		ft_isprint.c 	\
-					ft_isupper.c
+					ft_isupper.c		ft_isvalidint.c		ft_isvaliddbl.c
 ISFILESPATH		=	$(addprefix $(ISDIRPATH),$(ISSOURCES))
 # *** FT_MEM	*** #
 MEMDIRNAME		=	ft_mem/
@@ -71,7 +71,7 @@ STRFILESPATH	=	$(addprefix $(STRDIRPATH),$(STRSOURCES))
 # *** FT_TYP	*** #
 TYPDIRNAMES		=	ft_type/
 TYPDIRPATH		=	$(addprefix $(SRCDIR),$(TYPDIRNAMES))
-TYPSOURCES		=	ft_atoi.c			ft_itoa.c
+TYPSOURCES		=	ft_atof.c			ft_atoi.c			ft_itoa.c	
 TYPFILESPATH	=	$(addprefix $(TYPDIRPATH),$(TYPSOURCES))
 
 # *** GNL		*** #

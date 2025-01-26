@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:15:25 by cglavieu          #+#    #+#             */
-/*   Updated: 2024/12/26 12:23:51 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:12:21 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int		ft_isprint(int c);
 int		ft_ispunct(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
+int		ft_isvaliddbl(const char *str);
+int		ft_isvalidint(const char *str);
 int		ft_isxdigit(int c);
 
 #endif

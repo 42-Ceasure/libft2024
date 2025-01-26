@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:31:47 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/20 11:56:05 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:41:13 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ int		ft_fileopenw(char *path)
 	return (open(path, O_WRONLY));
 }
 
-int		ft_fileopenrw(char *path)
+int ft_fileopenrwc(char *path)
 {
-	return (open(path, O_RDWR));
+	int fd = open(path, O_RDWR | O_CREAT | O_TRUNC, 0644);
+	if (fd == -1)
+		perror("Error opening or creating file");
+	return fd;
 }
 
 int		ft_fileopen(char *path, char *mode)
@@ -34,6 +37,6 @@ int		ft_fileopen(char *path, char *mode)
 	else if (!ft_strcmp(mode, "w"))
 		return (ft_fileopenw(path));
 	else if (!ft_strcmp(mode, "rw"))
-		return (ft_fileopenrw(path));
+		return (ft_fileopenrwc(path));
 	return (-1);
 }
