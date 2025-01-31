@@ -6,29 +6,27 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/23 02:31:54 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:15:25 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_type.h>
 
-#include <limits.h>
-#include <float.h>
-#include <math.h>
-
-static const char *skip_whitespace(const char *str)
+static const char	*skip_whitespace(const char *str)
 {
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' ||
-		   *str == '\v' || *str == '\r')
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\v' || *str == '\r')
 		str++;
-	return str;
+	return (str);
 }
 
-double ft_virgule(const char *str, double value)
+double	ft_virgule(const char *str, double value)
 {
-	double cpt = 1.0;
-	double virgule = 0.0;
+	double	cpt;
+	double	virgule;
 
+	cpt = 1.0;
+	virgule = 0.0;
 	if (*str == '.')
 	{
 		str++;
@@ -40,14 +38,16 @@ double ft_virgule(const char *str, double value)
 		}
 		value += virgule / cpt;
 	}
-	return value;
+	return (value);
 }
 
-double ft_atof(const char *str)
+double	ft_atof(const char *str)
 {
-	int is_negative = 0;
-	double value = 0.0;
+	int		is_negative;
+	double	value;
 
+	is_negative = 0;
+	value = 0.0;
 	str = skip_whitespace(str);
 	if (*str == '+')
 		str++;
@@ -60,7 +60,8 @@ double ft_atof(const char *str)
 		return (NAN);
 	while ((*str >= '0') && (*str <= '9'))
 	{
-		if (value > (DBL_MAX / 10.0) || (value == (DBL_MAX / 10.0) && (*str - '0') > (DBL_MAX - value * 10.0)))
+		if (value > (DBL_MAX / 10.0) || (value == (DBL_MAX / 10.0)
+				&& (*str - '0') > (DBL_MAX - value * 10.0)))
 			return (is_negative ? -DBL_MAX : DBL_MAX);
 		value = (value * 10) + (*str - '0');
 		str++;

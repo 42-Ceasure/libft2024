@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 12:29:45 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 18:16:35 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:03:31 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (n)
 	{
 		if (*ptr == value)
-			return (void *)ptr;
+			return ((void *)ptr);
 		ptr++;
 		n--;
 	}

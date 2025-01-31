@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:11:14 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/23 15:11:55 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:02:26 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_is.h>
 
-int		ft_isvaliddbl(const char *str)
+int	ft_isvaliddbl(const char *str)
 {
 	int	point_seen;
 

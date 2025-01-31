@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 06:56:14 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 08:36:36 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:07:05 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*ret = dest;
+	char	*ret;
 
+	ret = dest;
 	while (*src != '\0')
 	{
 		*dest = *src;

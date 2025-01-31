@@ -6,17 +6,19 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 08:48:24 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:17:37 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_type.h>
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int	number = 0;
-	int	neg = 1;
+	int	number;
+	int	neg;
 
+	number = 0;
+	neg = 1;
 	while (ft_isspace(*nptr))
 		nptr++;
 	if (!ft_isdigit(*nptr))
@@ -32,5 +34,8 @@ int		ft_atoi(const char *nptr)
 		number = (number * 10) + (*nptr - '0');
 		nptr++;
 	}
-	return (neg < 0 ? -number : number);
+	if (neg < 0)
+		return (-number);
+	else
+		return (number);
 }

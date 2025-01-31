@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:38:47 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/16 16:51:40 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:07:27 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i = 0;
+	size_t	i;
 
+	i = 0;
 	while (*(s++) != '\0')
 		i++;
 	return (i);

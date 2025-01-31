@@ -6,13 +6,13 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 23:37:14 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/18 01:31:33 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:05:17 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_mem.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
@@ -31,7 +31,7 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 		{
 			*d = *s;
 			s--;
-			d--; 
+			d--;
 		}
 	}
 	return (dst);

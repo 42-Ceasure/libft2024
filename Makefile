@@ -6,11 +6,11 @@
 #    By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:24:45 by cglavieu          #+#    #+#              #
-#    Updated: 2025/01/23 15:13:05 by cglavieu         ###   ########.fr        #
+#    Updated: 2025/01/31 16:54:53 by cglavieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DEBUG			=	true
+DEBUG			=	false
 
 # *** LIBRARY **************************************************************** #
 NAME			=	libft.a
@@ -31,7 +31,7 @@ TESTINCDIR		=	./test/inc/
 
 # *** SOURCES **************************************************************** #
 SRCDIR			=	./src/
-# *** FT_FILE		*** #
+# *** FT_FILE	*** #
 FILEDIRNAME		=	ft_file/
 FILEDIRPATH		=	$(addprefix $(SRCDIR),$(FILEDIRNAME))
 FILESOURCES		=	ft_filelinecount.c	ft_fileopen.c

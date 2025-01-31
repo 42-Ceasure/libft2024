@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:37 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/22 08:33:20 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:59:28 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,19 @@ int	ft_filelinecount(char *path)
 	char	buffer[BUFF_SIZE + 1];
 	size_t	line_count;
 
+	ret = 1;
 	line_count = 0;
 	fd = ft_fileopenr(path);
 	if (fd == -1)
-	{
-		printf("Error opening file.\n");
 		return (-1);
-	}
-	while ((ret = read(fd, buffer, BUFF_SIZE)) > 0)
+	while (ret > 0)
 	{
+		ret = read(fd, buffer, BUFF_SIZE);
 		buffer[ret] = '\0';
 		line_count += ft_strccount(buffer, '\n');
 	}
 	if (ret == -1)
-	{
-		printf("Error reading file.\n");
 		line_count = -1;
-	}
 	close(fd);
 	return (line_count);
 }
