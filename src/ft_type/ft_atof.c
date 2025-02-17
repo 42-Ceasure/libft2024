@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/02/17 08:27:03 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:09:00 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ double	ft_atof(const char *str)
 		return (NAN);
 	while (ft_isdigit(*str))
 	{
-		if (value > (DBL_MAX / 10.0) || (value == (DBL_MAX / 10.0)
-				&& (*str - '0') > (DBL_MAX - value * 10.0)))
-			return (neg * DBL_MAX);
+		if (value > (MY_DBL_MAX / 10.0) || (value == (MY_DBL_MAX / 10.0)
+				&& (*str - '0') > (MY_DBL_MAX - value * 10.0)))
+			return (neg * MY_DBL_MAX);
 		value = (value * 10) + (*str - '0');
 		str++;
 	}
