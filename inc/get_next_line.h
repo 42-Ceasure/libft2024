@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:17:02 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/02/17 11:45:50 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:10:07 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int		process_buffer(t_svg *svg, char *buffer, size_t ret);
 
 char	*find_newline(char *save, size_t len_save);
 int		process_line(char **save, size_t *len_save, char **line);
-
-
 
 int		handle_remaining_data(char **save, char **line, size_t len_save);
 int		process_remaining_data(t_svg *svg, char **line);
