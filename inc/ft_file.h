@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:24:59 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/22 19:57:53 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:49:25 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <ft_string.h>
-# include <libft.h>
+# include <ft_print.h>
+
+# define BUFF_SIZE 4095
 
 int		ft_filelinecount(char *path);
 int		ft_fileopenr(char *path);

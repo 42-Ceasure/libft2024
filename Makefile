@@ -6,7 +6,7 @@
 #    By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:24:45 by cglavieu          #+#    #+#              #
-#    Updated: 2025/01/31 16:54:53 by cglavieu         ###   ########.fr        #
+#    Updated: 2025/02/17 11:48:10 by cglavieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,8 @@ TYPFILESPATH	=	$(addprefix $(TYPDIRPATH),$(TYPSOURCES))
 # *** GNL		*** #
 GNLDIRNAME		=	get_next_line/
 GNLDIRPATH		=	$(addprefix $(SRCDIR),$(GNLDIRNAME))
-GNLSOURCES		=	get_next_line.c
+GNLSOURCES		=	get_next_line.c		allocations.c		buffer_manage.c	\
+					line_processing.c	save_manage.c
 GNLFILESPATH	=	$(addprefix $(GNLDIRPATH),$(GNLSOURCES))
 
 # *** TESTER	*** #

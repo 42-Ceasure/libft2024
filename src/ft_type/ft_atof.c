@@ -6,7 +6,7 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:35:34 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:15:25 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:27:03 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,35 +41,39 @@ double	ft_virgule(const char *str, double value)
 	return (value);
 }
 
+int	sign(const char *str)
+{
+	if (*str == '-')
+		return (-1);
+	else if (*str == '+')
+		return (1);
+	return (0);
+}
+
 double	ft_atof(const char *str)
 {
-	int		is_negative;
+	int		neg;
 	double	value;
 
-	is_negative = 0;
 	value = 0.0;
 	str = skip_whitespace(str);
-	if (*str == '+')
+	neg = sign(str);
+	if (neg == 0)
+		neg = 1;
+	else
 		str++;
-	else if (*str == '-')
-	{
-		is_negative = 1;
-		str++;
-	}
 	if (*str == '\0')
 		return (NAN);
-	while ((*str >= '0') && (*str <= '9'))
+	while (ft_isdigit(*str))
 	{
 		if (value > (DBL_MAX / 10.0) || (value == (DBL_MAX / 10.0)
 				&& (*str - '0') > (DBL_MAX - value * 10.0)))
-			return (is_negative ? -DBL_MAX : DBL_MAX);
+			return (neg * DBL_MAX);
 		value = (value * 10) + (*str - '0');
 		str++;
 	}
 	if (*str != '.' && (*str < '0' || *str > '9'))
 		return (NAN);
 	value = ft_virgule(str, value);
-	if (is_negative)
-		value = -value;
-	return (value);
+	return (value * neg);
 }

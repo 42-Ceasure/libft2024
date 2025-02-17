@@ -6,14 +6,14 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 17:15:25 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/23 15:12:21 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 07:33:46 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_IS_H
 # define FT_IS_H
 
-# define DEL	(127)
+# define DEL	127
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

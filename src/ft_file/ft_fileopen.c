@@ -6,33 +6,33 @@
 /*   By: cglavieu <cglavieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:31:47 by cglavieu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:01:21 by cglavieu         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:48:33 by cglavieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_file.h>
 
-int		ft_fileopenr(char *path)
+int	ft_fileopenr(char *path)
 {
 	return (open(path, O_RDONLY));
 }
 
-int		ft_fileopenw(char *path)
+int	ft_fileopenw(char *path)
 {
 	return (open(path, O_WRONLY));
 }
 
-int		ft_fileopenrwc(char *path)
+int	ft_fileopenrwc(char *path)
 {
 	int	fd;
 
 	fd = open(path, O_RDWR | O_CREAT | O_TRUNC, 0644);
 	if (fd == -1)
-		perror("Error opening or creating file");
+		ft_putstr("Error opening or creating file\n");
 	return (fd);
 }
 
-int		ft_fileopen(char *path, char *mode)
+int	ft_fileopen(char *path, char *mode)
 {
 	if (!ft_strcmp(mode, "r"))
 		return (ft_fileopenr(path));
